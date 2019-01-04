@@ -8,6 +8,8 @@ Python 3.7
 
 PostgreSQL
 
+Pipenv (Run `brew install pipenv` or `pip install pipenv`)
+
 ## Setup 
 For setup:
 * Clone Repository 
