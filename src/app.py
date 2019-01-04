@@ -7,10 +7,7 @@ from .views.CommentView import comment_api as comment_blueprint
 
 
 def create_app(env_name):
-    """
-    Create app
-
-    """
+    """Create app"""
 
     app = Flask(__name__)
 

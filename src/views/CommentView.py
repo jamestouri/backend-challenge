@@ -14,8 +14,6 @@ from ..models.CommentModel import(
 comment_api = Blueprint('comment_api', __name__)
 comment_schema = CommentSchema()
 
-comment_api = Blueprint('comment_api', __name__)
-comment_schema = CommentSchema()
 
 def  response(res, status_code):
   """Custom Response"""
@@ -42,18 +40,14 @@ def create():
 
 @comment_api.route('/', methods=['GET'])
 def index():
-    """
-    Get all Comments
-    """
+    """Get all Comments"""
     comments = CommentModel.get_all_comments()
     data = comment_schema.dump(comments, many=True).data
     return response(data, 201)
 
 @comment_api.route('/<int:id>', methods=['GET'])
 def show(id):
-    """
-    Get 1 Comment
-    """
+    """Get 1 Comment"""
     comment = CommentModel.get_one_comment(id)
     if not comment:
         return response({'error': 'comment not found'}, 404)
@@ -62,9 +56,7 @@ def show(id):
 
 @comment_api.route('/<int:id>', methods=['PUT'])
 def update(id):
-    """
-    Updating 1 Comment
-    """
+    """Updating 1 Comment"""
     req_data = request.get_json()
     comment = CommentModel.get_one_comment(id)
     if not comment:
@@ -81,9 +73,7 @@ def update(id):
 
 @comment_api.route('/<int:id>', methods=['DELETE'])
 def delete(id):
-    """
-    Delete 1 Comment
-    """
+    """Delete 1 Comment"""
     comment = CommentModel.get_one_comment(id)
     if not comment:
         return response({'error': 'comment not found'}, 404)
