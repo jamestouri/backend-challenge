@@ -5,6 +5,7 @@ Challenge for SynapseFi
 
 ## Dependencies
 Python 3.7 
+
 PostgreSQL
 
 ## Setup 
