@@ -1,4 +1,8 @@
-from marshmallow import fields, Schema
+
+from marshmallow import (
+    fields,
+    Schema,
+)
 import datetime
 from . import db
 
@@ -41,9 +45,9 @@ class CommentModel(db.Model):
     def get_one_comment(id):
         return CommentModel.query.get(id)
 
-
-    def __repr(self):
+    def __repr__(self):
         return '<id {}>'.format(self.id)
+
 
 class CommentSchema(Schema):
     id = fields.Int(dump_only=True)

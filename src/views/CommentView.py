@@ -1,5 +1,16 @@
-from flask import request, g, Blueprint, json, Response
-from ..models.CommentModel import CommentModel, CommentSchema
+from flask import (
+    request,
+    g,
+    Blueprint,
+    json,
+    Response,
+)
+from ..models.CommentModel import(
+    CommentModel,
+    CommentSchema,
+)
+
+
 comment_api = Blueprint('comment_api', __name__)
 comment_schema = CommentSchema()
 
@@ -7,9 +18,7 @@ comment_api = Blueprint('comment_api', __name__)
 comment_schema = CommentSchema()
 
 def  response(res, status_code):
-  """
-  Custom Response
-  """
+  """Custom Response"""
   return Response(
     mimetype="application/json",
     response=json.dumps(res),
@@ -19,9 +28,7 @@ def  response(res, status_code):
 
 @comment_api.route('/', methods=['POST'])
 def create():
-    """
-    Creating Comment
-    """
+    """Creating Comment"""
     req_data = request.get_json()
 
     data, error = comment_schema.load(req_data)
