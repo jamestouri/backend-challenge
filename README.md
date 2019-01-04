@@ -3,6 +3,10 @@ Challenge for SynapseFi
 
 ## Created CRUD Application in Python Flask and PostgreSQL Database
 
+## Dependencies
+Python 3.7 
+PostgreSQL
+
 ## Setup 
 For setup:
 * Clone Repository 
